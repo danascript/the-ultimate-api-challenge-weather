@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="icon" href="favicon.ico" />
+
+        <title>Weather Forecast</title>
+    </head>
+    <body>
+        <h1 class="text-center p-4"><span class="font-weight-lighter">Weather</span> Forecast</h1>
+
+        <div
+            id="search-box"
+            class="genericBox container p-4 d-flex justify-content-center align-items-center flex-column text-center position-relative"
+        >
+            <form id="search-form" class="animate__fadeIn">
+                <input
+                    aria-label="type location here"
+                    type="text"
+                    id="search-query"
+                    class="searchBox__input form-control mb-4"
+                    placeholder="Search for location"
+                    required
+                />
+
+                <button type="submit" class="btn searchBox__button">SEARCH</button>
+            </form>
+
+            <!-- ERROR -->
+            <div id="error-box" class="errorBox d-none alert position-absolute" role="alert"></div>
+        </div>
+
+        <!-- LOADER -->
+        <div id="loader-box" class="d-none">
+            <div class="genericBox container d-flex justify-content-center align-items-center">
+                <div class="loaderBox animate__fadeIn d-flex justify-content-center align-items-center">
+                    <svg
+                        version="1.1"
+                        id="Layer_1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        x="0px"
+                        y="0px"
+                        width="54px"
+                        height="60px"
+                        viewBox="0 0 24 30"
+                        xml:space="preserve"
+                    >
+                        <rect x="0" y="0" width="3" height="10" fill="#333">
+                            <animateTransform
+                                attributeType="xml"
+                                attributeName="transform"
+                                type="translate"
+                                values="0 0; 0 20; 0 0"
+                                begin="0"
+                                dur="0.6s"
+                                repeatCount="indefinite"
+                            />
+                        </rect>
+                        <rect x="10" y="0" width="3" height="10" fill="#333">
+                            <animateTransform
+                                attributeType="xml"
+                                attributeName="transform"
+                                type="translate"
+                                values="0 0; 0 20; 0 0"
+                                begin="0.2s"
+                                dur="0.6s"
+                                repeatCount="indefinite"
+                            />
+                        </rect>
+                        <rect x="20" y="0" width="3" height="10" fill="#333">
+                            <animateTransform
+                                attributeType="xml"
+                                attributeName="transform"
+                                type="translate"
+                                values="0 0; 0 20; 0 0"
+                                begin="0.4s"
+                                dur="0.6s"
+                                repeatCount="indefinite"
+                            />
+                        </rect>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- RESULTS -->
+        <div id="forecast-box" class="justify-content-center d-none">
+            <div class="genericBox animate__fadeIn d-block d-md-flex">
+                <div class="col-12 col-md-4 d-flex forecastBox__card weather-card">
+                    <div class="forecastBox__gradient--img"></div>
+                    <div class="forecastBox__gradient"></div>
+                    <div class="forecastBox__card--inner d-flex flex-column justify-content-between pt-3 pb-2 pl-2">
+                        <div>
+                            <h2 id="forecast-card-weekday" class="font-weight-bold mb-1"></h2>
+                            <p id="forecast-card-date" class="font-weight-lighter mb-0"></p>
+                            <p class="d-flex align-items-baseline font-weight-lighter mb-1">
+                                <img width="10" height="15" src="location-pin.png" class="mr-1" />
+                                <span id="forecast-card-location"></span>
+                            </p>
+                        </div>
+                        <div>
+                            <img width="45" id="forecast-card-img" src="" />
+                            <h2 class="font-weight-bold mb-1"><span id="forecast-card-temp"></span>°C</h2>
+                            <h5 id="forecast-card-description" class="font-weight-lighter"></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-8 d-flex flex-column justify-content-between">
+                    <div class="mt-4 mt-md-2">
+                        <div id="forecast-details" class="d-flex flex-column mb-2"></div>
+                    </div>
+                    <ul
+                        id="forecast-details-week"
+                        class="forecastBox__week-list d-flex justify-content-between p-0"
+                    ></ul>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script
+        src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+        crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+    <script src="script.js"></script>
+</html>
