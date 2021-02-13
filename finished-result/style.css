@@ -1,0 +1,145 @@
+/* Styling credit goes to: https://codepen.io/Call_in/pen/pMYGbZ */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400,700,900&display=swap');
+
+:root {
+    --gradient: linear-gradient(135deg, #72edf2 10%, #5151e5 100%);
+    --bg-color: #343d4b;
+    --bg-color--card: #222831;
+
+    --main-text-color: #ffffff;
+
+    --main-border-radius: 25px;
+    --secondary-border-radius: 15px;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--main-text-color);
+}
+
+.genericBox {
+    border-radius: var(--main-border-radius);
+    -webkit-box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
+    background-color: var(--bg-color--card);
+    color: var(--main-text-color);
+    width: 85%;
+    max-width: 675px;
+    min-height: 300px;
+}
+
+.animate__fadeIn {
+    opacity: 1;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.25s;
+}
+
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.searchBox__input {
+    border-radius: var(--main-border-radius);
+}
+
+.searchBox__button {
+    border: none;
+    border-radius: var(--main-border-radius);
+    padding: 0.65rem;
+    background-image: var(--gradient);
+    color: var(--main-text-color);
+    font-weight: 700;
+    box-shadow: 0 0 30px -5px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    line-height: initial;
+    width: 100%;
+}
+
+.searchBox__button:hover {
+    color: var(--main-text-color);
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+}
+
+.errorBox {
+    bottom: 0;
+}
+
+.loaderBox {
+    height: 300px;
+}
+
+.loaderBox svg path,
+.loaderBox svg rect {
+    fill: #65b6ee;
+}
+
+.forecastBox__card {
+    border-radius: var(--main-border-radius);
+}
+
+.forecastBox__card--inner {
+    z-index: 1;
+    height: 300px;
+}
+
+.forecastBox__gradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: var(--gradient);
+    background-size: cover;
+    border-radius: var(--main-border-radius);
+    opacity: 0.7;
+}
+.forecastBox__gradient--img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url('mountain.jpg');
+    background-size: cover;
+    border-radius: var(--main-border-radius);
+}
+
+.forecastBox__week-day {
+    width: 100px;
+}
+
+.forecastBox__week-list {
+    list-style-type: none;
+    padding: 0;
+    -webkit-box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
+    border-radius: var(--secondary-border-radius);
+    background-color: var(--bg-color--card);
+}
+
+.forecastBox__week-list .forecastBox__week-day {
+    border-radius: var(--secondary-border-radius);
+}
+
+.forecastBox__week-list .forecastBox__week-day:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    background: #fff;
+    color: #222831;
+
+    -webkit-box-shadow: 0 0 40px -5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 40px -5px rgba(0, 0, 0, 0.2);
+}

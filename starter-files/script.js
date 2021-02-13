@@ -1,11 +1,10 @@
 /**
  *  STEPS:
  *
- *  1. Create a class to GET weather data, use a CORS helper (https://the-ultimate-api-challenge.herokuapp.com/) and
- *     attach it using .ajaxPrefilter to the request and GET the woid
- *  2. Use the response from the step above and GET the weather for that location
- *  3. Deconstruct the data received and shape it to what the UI expects it to look like before sending to the UI
- *  4. Add error/loading states and cover edge use cases
- *  5. Divide classes per function to have a more clean code approach and separation on concerns
+ *  1. Declare a class to GET weather data, and GET the woeid, output received data
+ *  2. Register an event listener and attach it to the GET requests chain from above, adjust UI loading state
+ *  3. Prepare data for the UI in advance and try to use unified structure before outputting to the template
+ *  4. Divide classes per function to have a more clean code approach and separation on concerns
+ *  5. Add error/loading states and cover edge use cases
  *
  */
